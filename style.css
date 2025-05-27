@@ -1,0 +1,100 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Encabezado y navegación */
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones */
+section {
+  margin-bottom: 30px;
+}
+
+h1, h2 {
+  color: #111;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* Galería de productos */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.productos img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+  font-size: 0.9em;
+}
