@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bro's Style - Productos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bro's Style – Productos</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Bro's Style</h1>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="nosotros.html">Nosotros</a> |
-            <a href="productos.html">Productos</a> |
-            <a href="como-pedir.html">Cómo pedir</a> |
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <h1>Bro's Style</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="como-pedir.html">Cómo pedir</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <h2>Catálogo de productos</h2>
+  <main>
+    <section>
+      <h2>Catálogo de Tenis</h2>
+      <p>A continuación te mostramos algunos de nuestros modelos más populares. Para consultar disponibilidad, tallas y hacer tu pedido, contáctanos vía WhatsApp.</p>
+      
+      <div class="productos">
+        <div class="producto">
+          <img src="img/tenis1.jpg" alt="Tenis modelo 1">
+          <h3>Modelo Urban</h3>
+          <p>Tenis casual ideales para el día a día. Disponibles por pedido.</p>
+        </div>
 
-        <section>
-            <img src="tenis1.jpg" alt="Modelo 1" style="width: 200px;" />
-            <p>Modelo 1 - Tenis clásicos</p>
-        </section>
+        <div class="producto">
+          <img src="img/tenis2.jpg" alt="Tenis modelo 2">
+          <h3>Modelo Street</h3>
+          <p>Diseño juvenil con gran comodidad. Varios colores disponibles.</p>
+        </div>
 
-        <section>
-            <img src="tenis2.jpg" alt="Modelo 2" style="width: 200px;" />
-            <p>Modelo 2 - Estilo urbano</p>
-        </section>
-
-        <section>
-            <img src="tenis3.jpg" alt="Modelo 3" style="width: 200px;" />
-            <p>Modelo 3 - Edición especial</p>
-        </section>
-    </main>
+        <div class="producto">
+          <img src="img/tenis3.jpg" alt="Tenis modelo 3">
+          <h3>Modelo Classic</h3>
+          <p>Estilo clásico con toques modernos. Tallas del 22 al 29.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

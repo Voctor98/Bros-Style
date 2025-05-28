@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bro's Style - Cómo pedir</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo pedir - Bro's Style</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bro's Style</h1>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="nosotros.html">Nosotros</a> |
-            <a href="productos.html">Productos</a> |
-            <a href="como-pedir.html">Cómo pedir</a> |
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
 
-    <main>
-        <h2>¿Cómo hacer un pedido?</h2>
-        <ol>
-            <li>Revisa nuestro catálogo de tenis.</li>
-            <li>Elige el modelo que más te guste.</li>
-            <li>Escríbenos directamente por WhatsApp.</li>
-            <li>Confirma talla, color y método de entrega.</li>
-            <li>¡Listo! Te notificamos cuando tu pedido esté listo.</li>
-        </ol>
+  <header>
+    <h1>Bro's Style</h1>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="como-pedir.html">Cómo pedir</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <p><a href="https://wa.me/5211234567890" target="_blank">Haz tu pedido por WhatsApp</a></p>
-    </main>
+  <main class="container">
+    <section>
+      <h2>¿Cómo hacer un pedido?</h2>
+      <p>Realizar un pedido en Bro's Style es muy sencillo. Sigue estos pasos:</p>
+      <ol>
+        <li>Explora nuestro catálogo de productos y elige el modelo que más te guste.</li>
+        <li>Toma nota del nombre o número del modelo.</li>
+        <li>Haz clic en el botón de WhatsApp que aparece abajo.</li>
+        <li>Escríbenos mencionando el modelo que deseas, tu talla y datos de contacto.</li>
+        <li>Confirmaremos contigo los detalles y la fecha estimada de entrega.</li>
+      </ol>
+    </section>
+  </main>
+<!-- Botón flotante de WhatsApp con ícono y texto -->
+<a href="https://wa.me/5215512345678" target="_blank" class="whatsapp-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+    <path d="M12.004 2C6.479 2 2 6.477 2 12c0 1.929.547 3.74 1.49 5.272L2 22l4.866-1.463A9.93 9.93 0 0012.004 22c5.525 0 10.004-4.477 10.004-10S17.529 2 12.004 2zm0 18.222a8.25 8.25 0 01-4.196-1.148l-.3-.179-2.891.87.915-2.816-.194-.29A8.196 8.196 0 013.75 12c0-4.548 3.706-8.25 8.254-8.25s8.25 3.702 8.25 8.25-3.703 8.222-8.25 8.222zm4.507-6.246c-.245-.122-1.45-.716-1.674-.796-.223-.082-.386-.122-.548.122-.163.245-.629.796-.772.96-.143.163-.285.184-.53.061-.245-.122-1.032-.38-1.963-1.214-.726-.646-1.214-1.447-1.357-1.692-.143-.245-.015-.378.107-.5.11-.11.245-.285.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.122-.548-1.324-.752-1.814-.198-.48-.4-.412-.548-.42l-.468-.008c-.163 0-.428.061-.653.306s-.857.837-.857 2.04c0 1.204.876 2.366 1 2.53.122.163 1.727 2.634 4.193 3.692.587.255 1.045.408 1.402.521.59.188 1.127.163 1.55.099.472-.07 1.45-.593 1.656-1.165.204-.571.204-1.06.143-1.165-.061-.102-.224-.163-.469-.285z"/>
+  </svg>
+  <span>Contactar por WhatsApp</span>
+</a>
+
+
 </body>
 </html>
