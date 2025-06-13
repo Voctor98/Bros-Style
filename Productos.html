@@ -7,45 +7,133 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Bro's Style</h1>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="productos.html">Productos</a></li>
-          <li><a href="como-pedir.html">Cómo pedir</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container header-container">
+    <h1 class="logo">Bro's Style</h1>
+    <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-  <main>
-    <section>
-      <h2>Catálogo de Tenis</h2>
-      <p>A continuación te mostramos algunos de nuestros modelos más populares. Para consultar disponibilidad, tallas y hacer tu pedido, contáctanos vía WhatsApp.</p>
-      
-      <div class="productos">
-        <div class="producto">
-          <img src="img/tenis1.jpg" alt="Tenis modelo 1">
-          <h3>Modelo Urban</h3>
-          <p>Tenis casual ideales para el día a día. Disponibles por pedido.</p>
-        </div>
+    <nav class="main-nav" id="mainNav">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="productos.html" class="nav-link">Productos</a></li>
+        <li><a href="como-pedir.html" class="nav-link">Cómo pedir</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-        <div class="producto">
-          <img src="img/tenis2.jpg" alt="Tenis modelo 2">
-          <h3>Modelo Street</h3>
-          <p>Diseño juvenil con gran comodidad. Varios colores disponibles.</p>
-        </div>
+<main>
+    <section class="productos-section container">
+        <h2>Nuestros Productos Exclusivos</h2>
+        <p class="section-description">Descubre nuestra colección curada de los tenis más icónicos y buscados. ¡Encuentra tu par perfecto!</p>
 
-        <div class="producto">
-          <img src="img/tenis3.jpg" alt="Tenis modelo 3">
-          <h3>Modelo Classic</h3>
-          <p>Estilo clásico con toques modernos. Tallas del 22 al 29.</p>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="images/NikeAF1Low_BlancoAguamarina.jpg" alt="Nike Air Force 1 Low Blanco y Verde Azulado">
+                <h3>Nike Air Force 1 Low</h3>
+                <p>El clásico AF1 en una combinación refrescante de blanco con toques verde azulado y detalles oscuros.</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Low%20(Blanco/Verde%20Azulado)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAF1Low_BlancoAzulDuo.jpg" alt="Nike Air Force 1 Mid/High Gris Claro">
+                <h3>Nike Air Force 1 Mid/High</h3>
+                <p>Elegancia en altura con este icónico modelo en un versátil tono gris claro o blanco hueso.</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Mid/High%20(Gris%20Claro)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAF1Low_GrisAzulMarino.jpg" alt="Nike Air Force 1 Low Gris y Azul Oscuro">
+                <h3>Nike Air Force 1 Low</h3>
+                <p>Una combinación audaz de gris y azul oscuro/marino con detalles en blanco. ¡Perfectos para destacar!</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Low%20(Gris/Azul%20Oscuro)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAF1Low_GrisSolido.jpg" alt="Nike Air Force 1 Low Rosa y Blanco Hueso">
+                <h3>Nike Air Force 1 Low</h3>
+                <p>Un toque suave y distintivo con esta versión del AF1 en encantador rosa y blanco hueso/crema.</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Low%20(Rosa/Blanco%20Hueso)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAF1Low_RosaCrema.jpg" alt="Nike Air Force 1 Low Gris Claro Sólido">
+                <h3>Nike Air Force 1 Low</h3>
+                <p>Versatilidad pura con este modelo AF1 Low en un elegante y sólido color gris claro o blanco hueso.</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Low%20(Gris%20Claro%20Sólido)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAF1MidHigh_GrisClaro.jpg" alt="Nike Air Jordan 1 Low Azul Royal">
+                <h3>Nike Air Jordan 1 Low</h3>
+                <p>El legendario Jordan 1 en una combinación de colores icónica: negro, azul y blanco. ¡Un clásico infalible!</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Jordan%201%20Low%20(Azul%20Royal/Puntera%20Negra)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
+            <div class="producto-card">
+                <img src="images/NikeAJ1Low_AzulRoyal.jpg" alt="Nike Air Force 1 Low Blanco y Dos Tonos de Azul">
+                <h3>Nike Air Force 1 Low</h3>
+                <p>Un diseño fresco del Air Force 1 con base blanca y detalles en dos armoniosos tonos de azul.</p>
+                <span class="precio">Consultar Precio</span>
+                <a href="https://wa.me/4491280906?text=Hola!%20Me%20interesan%20los%20Nike%20Air%20Force%201%20Low%20(Blanco/Dos%20Tonos%20de%20Azul)." target="_blank" class="cta-link small-link">Comprar en WhatsApp</a>
+            </div>
+
         </div>
-      </div>
     </section>
-  </main>
+
+    <section class="final-cta-section container">
+        <h2>¿No encuentras lo que buscas o necesitas ayuda?</h2>
+        <p>Nuestro equipo está listo para asistirte y ayudarte a encontrar el par de tenis perfecto para tu estilo.</p>
+        <div class="cta-buttons">
+            <a href="contacto.html" class="cta-link">Contáctanos ahora</a>
+            <a href="https://wa.me/4491280906?text=Hola!%20Tengo%20una%20consulta%20sobre%20tenis." target="_blank" class="cta-link secondary">Chatea con nosotros por WhatsApp</a>
+        </div>
+    </section>
+</main>
+
+  <a href="https://wa.me/4491280906" target="_blank" class="whatsapp-btn">
+    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+    <span>Contactar por WhatsApp</span>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bro's Style. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerButton = document.querySelector('.hamburger-menu');
+      const mainNav = document.getElementById('mainNav');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+
+      hamburgerButton.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        hamburgerButton.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            hamburgerButton.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

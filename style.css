@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* Reset */
 * {
@@ -11,189 +11,1382 @@
 /* Body */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8f8f8;
-  color: #2d2d2d;
+  background-color: #f0f8ff; /* Azul cielo muy claro */
+  color: #3d3d3d; /* Un gris oscuro suave */
   line-height: 1.6;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased; /* Mejora la renderización de fuentes */
+  scroll-behavior: smooth; /* Desplazamiento suave para anclas */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+  padding: 0 15px; /* Añadido padding horizontal para asegurar espacio en los bordes */
 }
 
-/* Header */
+/* --- Header y Navegación --- */
 header {
   background-color: #ffffff;
   padding: 20px 0;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
+  border-bottom: 1px solid #e0e0e0; /* Borde más suave */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil para profundidad */
+  position: sticky; /* Header fijo al hacer scroll */
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
-header h1 {
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Espacia el logo y el botón de hamburguesa/menú */
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.logo {
   font-size: 2.2rem;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700; /* Más audaz */
+  color: #3385ff; /* Color principal de tu marca */
+  margin: 0;
+  text-decoration: none; /* Asegúrate que el logo si es un enlace no tenga subrayado */
+}
+
+.main-nav {
+  flex-grow: 1; /* Permite que el nav ocupe el espacio restante */
+  text-align: right; /* Alinea el menú a la derecha en desktop */
 }
 
 .nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-  flex-wrap: wrap;
+  justify-content: flex-end; /* Alinea los ítems a la derecha */
+  gap: 30px; /* Espacio entre los ítems del menú */
 }
 
 .nav-menu li {
-  list-style: none;
+  margin: 0;
 }
 
-.nav-menu a {
+.nav-menu .nav-link { /* Usamos .nav-link para los estilos de los enlaces */
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.3s;
+  color: #5a5a5a; /* Color de texto para los enlaces */
+  font-weight: 600; /* Ligeramente más negrita */
+  font-size: 1.1rem;
+  padding: 8px 0; /* Padding vertical para un área de clic más grande */
+  position: relative; /* Necesario para la línea inferior */
+  transition: color 0.3s ease;
 }
 
-.nav-menu a:hover {
-  background-color: #eeeeee;
+.nav-menu .nav-link:hover {
+  color: #3385ff; /* Azul vibrante al pasar el ratón */
 }
 
-/* Main content */
+/* Línea inferior al hacer hover o para la página activa */
+.nav-menu .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Ajusta la posición de la línea */
+  width: 0%;
+  height: 3px; /* Grosor de la línea */
+  background-color: #3385ff; /* Color de la línea */
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-menu .nav-link:hover::after,
+.nav-menu .nav-link.active::after { /* Estado activo */
+  width: 100%;
+}
+
+/* --- Menú de Hamburguesa --- */
+.hamburger-menu {
+  display: none; /* Oculto por defecto en desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1050; /* Asegúrate de que esté por encima del menú desplegable */
+}
+
+.hamburger-menu:focus {
+  outline: none; /* Quita el contorno al hacer clic */
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333; /* Color de las barras */
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* Animación para las barras */
+}
+
+/* Animación del botón de hamburguesa a X */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg); /* Mueve y rota la primera barra */
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0; /* Oculta la barra del medio */
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg); /* Mueve y rota la tercera barra */
+}
+
+/* --- Main content (Estilos generales de las secciones) --- */
 main {
-  padding: 40px 15px;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #222;
+  padding: 40px 0; /* Padding vertical, el horizontal lo maneja .container */
 }
 
 section {
-  max-width: 900px;
-  margin: auto;
-  margin-bottom: 40px;
-  padding: 0 10px;
+  margin-bottom: 60px; /* Espacio entre secciones */
+  /* El ancho máximo y el margen automático ahora los controla .container */
 }
 
-/* Text */
+/* Títulos H2 (Global) */
+h2 {
+  font-size: 2.8rem; /* Tamaño más grande para títulos de sección */
+  margin-bottom: 25px;
+  text-align: center;
+  color: #3b3b3b; /* Un gris oscuro más impactante */
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Ancho inicial del subrayado */
+  height: 4px; /* Un poco más grueso */
+  background-color: #add8e6; /* Azul pastel para el subrayado */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+h2:hover::after {
+  width: 120px; /* Subrayado se expande al pasar el ratón */
+}
+
+/* Otros títulos (H3, H4) para consistencia */
+h3 {
+  font-size: 2.2rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  text-align: center; /* Por defecto centrado, se puede sobreescribir */
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+/* Textos (Párrafos y Listas) */
 p, li {
   font-size: 1.05rem;
-  margin-bottom: 12px;
-  color: #444;
+  margin-bottom: 15px; /* Más espacio entre párrafos/ítems */
+  color: #555555; /* Un gris medio suave */
+  line-height: 1.7; /* Mayor interlineado para mejor legibilidad */
 }
 
-/* Productos */
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
+/* Para resaltar texto en párrafos específicos */
+p strong, p span.highlight {
+  font-weight: 700; /* Más negrita */
+  color: #444; /* Un poco más oscuro */
 }
 
-.producto {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  transition: box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.producto:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.producto img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.producto h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #2a2a2a;
-}
-
-.producto p {
-  font-size: 0.95rem;
-  color: #666;
-}
-
-/* WhatsApp Button with icon and text */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 30px;
+/* --- Botones y Enlaces de Acción (CTA) --- */
+.cta-link {
+  display: inline-block;
+  background-color: #cceeff; /* Azul pastel */
+  color: #336699;
+  padding: 14px 30px; /* Botones más grandes y cómodos */
+  border-radius: 30px; /* Botones pill-shaped */
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.cta-link:hover {
+  background-color: #aaddff;
+  transform: translateY(-5px); /* Animación más pronunciada */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.cta-link.secondary { /* Un estilo secundario para el segundo botón */
+  background-color: transparent;
+  border: 2px solid #cceeff;
+  color: #336699;
+  box-shadow: none; /* Elimina la sombra por defecto */
+}
+
+.cta-link.secondary:hover {
+  background-color: #e6f7ff; /* Fondo sutil al pasar el ratón */
+  border-color: #aaddff;
+  color: #225588;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Sombra suave para el hover */
+}
+
+/* --- Sección de Productos (Específico de productos.html) --- */
+.productos-grid { /* Cambiado de .productos a .productos-grid para ser más específico */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width un poco más grande */
+  gap: 30px; /* Más espacio entre productos */
+  margin-top: 40px; /* Más espacio después del título de la sección */
+}
+
+.producto-card { /* Cambiado de .producto a .producto-card */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px; /* Bordes más redondeados */
+  padding: 20px; /* Más padding */
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.producto-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el ratón */
+  transform: translateY(-8px); /* Levantamiento más notable */
+}
+
+.producto-card img {
+  width: 100%;
+  max-height: 220px; /* Altura máxima un poco mayor */
+  object-fit: cover;
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 15px; /* Espacio debajo de la imagen */
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover img {
+  transform: scale(1.03); /* Ligeramente más grande al pasar el ratón */
+}
+
+.producto-card h3 {
+  font-size: 1.5rem; /* Título de producto más grande */
+  margin: 10px 0 8px;
+  color: #4a4a4a;
+}
+
+.producto-card p {
+  font-size: 1rem;
+  color: #777777;
+  margin-bottom: 10px; /* Menos margen en el último párrafo */
+  line-height: 1.5;
+}
+
+/* --- Botón flotante de WhatsApp --- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px; /* Más separado del borde inferior */
+  right: 25px; /* Más separado del borde derecho */
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Más espacio entre icono y texto */
+  background-color: #25d366; /* Verde vibrante de WhatsApp */
+  color: #ffffff; /* Texto blanco para contraste */
+  padding: 15px 22px; /* Botón más grande y cómodo */
+  border-radius: 35px; /* Más redondeado */
+  text-decoration: none;
+  font-weight: 700; /* Más audaz */
+  font-size: 1.1rem; /* Texto más grande */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
 }
 
 .whatsapp-btn svg {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  fill: white;
+  width: 28px; /* Icono más grande */
+  height: 28px;
+  fill: #ffffff; /* Icono blanco */
 }
 
 .whatsapp-btn:hover {
-  background-color: #1ebe5d;
+  background-color: #1da851; /* Un verde ligeramente más oscuro al pasar el ratón */
+  transform: scale(1.08); /* Ligeramente más grande */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35); /* Sombra más pronunciada */
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  color: #777;
-  border-top: 1px solid #ddd;
+  padding: 30px; /* Más padding */
+  background-color: #ffffff;
+  color: #888888;
+  border-top: 1px solid #e0e0e0;
   font-size: 0.95rem;
+  margin-top: 60px; /* Más espacio superior */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* --- SECCIONES ESPECÍFICAS DE PÁGINAS --- */
+
+/* --- INICIO (index.html) --- */
+.hero-section {
+  background-color: #f7fcff; /* Azul pastel muy claro */
+  padding: 100px 15px; /* Más padding para un banner impactante */
+  text-align: center;
+  margin-bottom: 60px;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero-section h1 {
+  font-size: 4rem; /* Título principal más grande */
+  color: #3b3b3b;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.hero-section p {
+  font-size: 1.5rem; /* Subtítulo más grande */
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* Más espacio antes de los botones */
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Más espacio entre botones */
+  flex-wrap: wrap; /* Para responsive */
+}
+
+/* Sección de Características (Inicio) */
+.features-section {
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 40px 0;
+  background-color: #fefefe; /* Casi blanco */
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.6rem;
+.feature-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item h3 { /* Ajustado de h2 a h3 */
+  font-size: 1.8rem;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.feature-item p {
+  font-size: 1.05rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Sección de Testimonios (Inicio) */
+.testimonials-section {
+  background-color: #e6f7ff; /* Azul pastel muy claro */
+  padding: 60px 15px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #555555;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.testimonial-card .author {
+  font-weight: 600;
+  color: #333333;
+  font-size: 1.1rem;
+}
+
+/* --- NOSOTROS (nosotros.html) --- */
+
+.about-hero {
+  background-color: #f7fcff; /* Fondo muy suave */
+  padding: 80px 15px;
+  text-align: center;
+  margin-bottom: 60px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-hero h2 {
+  font-size: 3.2rem; /* Título principal de la sección */
+  color: #3b3b3b;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about-hero .hero-intro-text { /* Cambiado de .intro-text a .hero-intro-text para evitar conflictos */
+  font-size: 1.4rem;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Sección de Destacados (Misión/Visión/Valores) */
+.about-highlight {
+  margin-bottom: 60px;
+  padding: 20px 0;
+  text-align: center; /* Centrar el título de la sección */
+}
+
+.about-highlight h3 { /* Título de la sección de highlights */
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-highlight h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #add8e6; /* Azul pastel */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.about-highlight h3:hover::after {
+  width: 130px;
+}
+
+.highlight-grid { /* Cambiado de .about-highlight .container a .highlight-grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  padding-top: 20px; /* Espacio después del título h3 */
+}
+
+.highlight-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-item h4 { /* Cambiado de h3 a h4 para el título de la tarjeta */
+  font-size: 1.6rem;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.highlight-item h4::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: #ffe0b2; /* Pastel naranja claro */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.highlight-item:hover h4::after {
+  width: 70px;
+}
+
+.highlight-item p {
+  font-size: 1.05rem;
+  color: #6a6a6a;
+  line-height: 1.7;
+}
+
+/* Sección de Historia (Story) */
+.about-story {
+  margin-bottom: 60px;
+  padding: 40px 0; /* Más padding vertical */
+  text-align: center;
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.about-story h3 {
+  font-size: 2.5rem; /* Título de sección */
+  color: #5b5b5b;
+  margin-bottom: 30px; /* Más espacio debajo del título */
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-story h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #add8e6;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.about-story:hover h3::after {
+  width: 100px;
+}
+
+.about-story p {
+  font-size: 1.15rem; /* Texto de la historia un poco más grande */
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  line-height: 1.7;
+}
+
+/* Sección de Valores (value-card) */
+.about-values {
+  margin-bottom: 60px;
+  padding: 40px 0;
+  background-color: #f0f8ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.about-values h3 {
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-values h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #b0e0e6;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.about-values:hover h3::after {
+  width: 100px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajustado para 3-4 columnas */
+  gap: 25px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.value-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px; /* Más padding */
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h4 {
+  font-size: 1.4rem; /* Título más grande */
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: 1rem;
+  color: #777777;
+  line-height: 1.6;
+}
+
+/* Sección de Llamada a la Acción (CTA) para Nosotros */
+.about-call-to-action {
+  text-align: center;
+  padding: 50px 15px; /* Más padding */
+  background-color: #cceeff; /* Azul pastel */
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-call-to-action h3 { /* Cambiado de h2 a h3 */
+  font-size: 2.8rem;
+  color: #225588; /* Azul más oscuro para contraste */
+  margin-bottom: 25px;
+}
+
+.about-call-to-action p {
+  font-size: 1.3rem;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- CÓMO PEDIR (como-pedir.html) --- */
+
+/* Hero Section para Cómo Pedir */
+.how-to-order-hero {
+  background-color: #e6f7ff; /* Azul pastel muy claro */
+  padding: 80px 15px;
+  text-align: center;
+  margin-bottom: 60px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.how-to-order-hero h2 {
+  font-size: 3.2rem;
+  color: #3b3b3b;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.how-to-order-hero .hero-intro-text {
+  font-size: 1.4rem;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sección de Pasos de Pedido */
+.order-steps-section {
+  margin-bottom: 60px;
+  padding: 40px 15px;
+  background-color: #f7fcff; /* Fondo muy suave */
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.order-steps-section h3 {
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.order-steps-section h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #add8e6; /* Azul pastel */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.order-steps-section h3:hover::after {
+  width: 130px;
+}
+
+.order-steps-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.step-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.step-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #add8e6;
+  color: #336699;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  font-size: 1.6rem;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  font-size: 1.05rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Enlace dentro del texto del paso */
+.inline-link {
+  color: #3385ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.inline-link:hover {
+  color: #1a6acb;
+  text-decoration: underline;
+}
+
+/* Botón de WhatsApp específico para el paso 2 */
+.whatsapp-btn-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #98fb98; /* Verde menta pastel */
+  color: #333333;
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.whatsapp-btn-inline svg {
+  width: 20px;
+  height: 20px;
+  fill: #333333;
+}
+
+.whatsapp-btn-inline:hover {
+  background-color: #76e176;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* Botón pequeño reutilizado del cta-link */
+.cta-link.small-link {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background-color: #ffe0b2; /* Naranja pastel claro */
+    color: #cc8400; /* Naranja más oscuro */
+    box-shadow: none; /* Eliminar sombra extra */
+    margin-top: 10px;
+}
+
+.cta-link.small-link:hover {
+    background-color: #ffcc80; /* Naranja más fuerte al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Sección de Preguntas Frecuentes (FAQ) */
+.faq-section {
+  margin-bottom: 60px;
+  padding: 40px 15px;
+  background-color: #f0f8ff; /* Azul cielo muy claro */
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  text-align: center;
+}
+
+.faq-section h3 {
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.faq-section h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background-color: #cceeff; /* Azul pastel */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.faq-section h3:hover::after {
+  width: 110px;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.faq-item h4 {
+  font-size: 1.3rem;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Sección de CTA final */
+.final-cta-section {
+  text-align: center;
+  padding: 50px 15px;
+  background-color: #98fb98; /* Verde menta pastel */
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.final-cta-section h2 {
+  font-size: 2.8rem;
+  color: #2e7d32; /* Verde más oscuro para contraste */
+  margin-bottom: 20px;
+}
+
+.final-cta-section p {
+  font-size: 1.3rem;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+}
+
+/* --- CONTACTO (contacto.html) --- */
+
+/* Hero Section para Contacto */
+.contact-hero-section {
+  background-color: #ffe0b2; /* Naranja pastel muy claro */
+  padding: 80px 15px;
+  text-align: center;
+  margin-bottom: 60px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-hero-section h2 {
+  font-size: 3.2rem;
+  color: #a0522d; /* Color café suave para contraste */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contact-hero-section .hero-intro-text {
+  font-size: 1.4rem;
+  color: #7a5230; /* Color café oscuro para texto */
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sección de Detalles de Contacto */
+.contact-details-section {
+  margin-bottom: 60px;
+  padding: 40px 15px;
+  background-color: #f7fcff; /* Fondo muy suave */
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.contact-details-section h3 {
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.contact-details-section h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #cceeff; /* Azul pastel */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.contact-details-section h3:hover::after {
+  width: 130px;
+}
+
+.contact-card-grid { /* Cambiado de .contact-card a .contact-card-grid para diferenciar */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding-top: 20px; /* Espacio después del h3 */
+}
+
+.contact-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #d1f7d1; /* Verde pastel suave */
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.contact-item h4 {
+  font-size: 1.8rem;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.contact-item p {
+  font-size: 1.1rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.schedule-text {
+  font-weight: 600;
+  color: #555555;
+  font-size: 1.15rem;
+}
+
+/* Sección de Redes Sociales */
+.social-media-section {
+  text-align: center;
+  padding: 50px 15px;
+  background-color: #f0f8ff; /* Azul cielo muy claro */
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  margin-bottom: 40px;
+}
+
+.social-media-section h3 {
+  font-size: 2.5rem;
+  color: #3b3b3b;
+  margin-bottom: 20px;
+}
+
+.social-media-section p {
+  font-size: 1.2rem;
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icon-link {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.social-icon-link img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet y pantallas medianas (768px a 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%; /* Un poco más de ancho en tablets */
+  }
+
+  .logo {
+    font-size: 2rem;
   }
 
   .nav-menu {
-    flex-direction: column;
-    align-items: center;
+    gap: 20px; /* Menos espacio entre ítems en menú de escritorio */
+  }
+
+  .hero-section {
+    padding: 80px 15px;
+  }
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+  .hero-section p {
+    font-size: 1.3rem;
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  .productos-grid,
+  .highlight-grid,
+  .values-grid,
+  .order-steps-list,
+  .testimonial-grid,
+  .contact-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Más compactos */
+    gap: 25px;
+  }
+
+  .producto-card, .feature-item, .highlight-item, .value-card, .step-item, .testimonial-card, .contact-item {
+    padding: 20px; /* Reducir padding general */
+  }
+
+  .cta-link {
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480px) {
+
+/* Móviles (hasta 767px) */
+@media (max-width: 767px) {
   body {
     font-size: 15px;
   }
 
-  .container {
-    width: 95%;
+  /* Header para móvil: Ajusta el logo y la hamburguesa */
+  header .container {
+    justify-content: space-between;
+    padding: 15px 20px;
   }
 
-  .producto {
-    padding: 10px;
+  header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: left;
+  }
+
+  .nav-menu {
+    display: none; /* Oculta el menú normal por defecto */
+    flex-direction: column; /* Apila los elementos del menú */
+    background-color: #ffffff;
+    position: absolute;
+    top: 65px; /* Ajusta según la altura de tu header */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  }
+
+  /* Cuando el menú está activo (visible) */
+  .main-nav.active .nav-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .nav-menu .nav-link {
+    padding: 12px 20px;
+    display: block;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+  }
+
+  .nav-menu .nav-link:hover {
+    background-color: #e6f7ff;
+  }
+
+  .hamburger-menu {
+    display: flex; /* Muestra el botón de hamburguesa en móvil */
+  }
+
+  /* Ajustes generales para secciones en móvil */
+  main {
+    padding: 30px 0;
+  }
+
+  section {
+    margin-bottom: 40px; /* Menos espacio entre secciones */
+  }
+
+  h2 {
+    font-size: 2rem; /* Títulos de sección más pequeños */
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  p, li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .hero-section {
+    padding: 60px 15px;
+  }
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .hero-buttons {
+    flex-direction: column; /* Apila los botones */
+    gap: 15px;
+  }
+  .cta-link {
+    width: 80%; /* Ancho para botones apilados */
+    margin: 0 auto; /* Centrar */
+  }
+
+  /* Grids en móvil: una columna */
+  .productos-grid,
+  .highlight-grid,
+  .values-grid,
+  .order-steps-list,
+  .testimonial-grid,
+  .contact-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .producto-card, .feature-item, .highlight-item, .value-card, .step-item, .testimonial-card, .contact-item {
+    padding: 15px;
+  }
+  .producto-card img {
+    max-height: 180px;
+  }
+  .whatsapp-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+  .whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Secciones específicas ajustadas para móvil */
+  .about-hero h2, .how-to-order-hero h2, .contact-hero-section h2 {
+    font-size: 2.5rem;
+  }
+  .about-hero .hero-intro-text, .how-to-order-hero .hero-intro-text, .contact-hero-section .hero-intro-text {
+    font-size: 1.15rem;
+  }
+
+  .social-icons {
+    flex-wrap: wrap; /* Permite que los iconos se envuelvan */
+    gap: 20px;
+  }
+  .social-icon-link {
+    width: 50px;
+    height: 50px;
+  }
+  .social-icon-link img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Móviles muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .hero-section p {
+    font-size: 0.95rem;
+  }
+  .cta-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .whatsapp-btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+  .whatsapp-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }

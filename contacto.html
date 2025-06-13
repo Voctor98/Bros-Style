@@ -1,29 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bro's Style - Contacto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bro's Style - Contacto</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Bro's Style</h1>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="nosotros.html">Nosotros</a> |
-            <a href="productos.html">Productos</a> |
-            <a href="como-pedir.html">Cómo pedir</a> |
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+<header>
+  <div class="container header-container">
+    <h1 class="logo">Bro's Style</h1>
+    <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-    <main>
-        <h2>Contáctanos</h2>
-        <p>Estamos disponibles para responder tus dudas y ayudarte con tus pedidos.</p>
+    <nav class="main-nav" id="mainNav">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="productos.html" class="nav-link">Productos</a></li>
+        <li><a href="como-pedir.html" class="nav-link">Cómo pedir</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5211234567890" target="_blank">Enviar mensaje</a></p>
-        <p><strong>Horario de atención:</strong> Lunes a Viernes, 10:00 am - 6:00 pm</p>
-    </main>
+  <main>
+    <section class="contact-hero-section">
+      <div class="container">
+        <h2>Hablemos de Estilo y Tenis</h2>
+        <p class="hero-intro-text">
+          ¿Tienes una duda, quieres un modelo exclusivo o necesitas ayuda con tu pedido? ¡Estamos aquí para ti! En **Bro's Style**, la comunicación es clave.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-details-section">
+      <div class="container">
+        <h3>Ponte en Contacto Directo</h3>
+        <div class="contact-card">
+          <div class="contact-item">
+            <span class="icon-circle"><img src="img/whatsapp-icon.png" alt="WhatsApp Icon" class="contact-icon"></span>
+            <h4>WhatsApp: Tu Línea Directa</h4>
+            <p>La forma más rápida y sencilla de hablar con nosotros para consultas, disponibilidad de modelos y pedidos.</p>
+            <a href="https://wa.me/4491280906?text=Hola!%20Quisiera%20contactarlos%20desde%20la%20p%C3%A1gina%20de%20Contacto." target="_blank" class="whatsapp-btn-large">
+              <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+              Enviar Mensaje por WhatsApp
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span class="icon-circle"><img src="img/time-icon.png" alt="Time Icon" class="contact-icon"></span>
+            <h4>Horario de Atención</h4>
+            <p>Estamos disponibles para atenderte y resolver tus consultas durante nuestro horario:</p>
+            <p class="schedule-text">
+              **Lunes a Viernes:** 10:00 AM - 6:00 PM <br>
+              **Sábados, Domingos y Feriados:** Cerrado
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-media-section">
+      <div class="container">
+        <h3>Síguenos en Redes Sociales</h3>
+        <p>Mantente al tanto de nuestros nuevos modelos, promociones y noticias de Bro's Style.</p>
+        <div class="social-icons">
+          <a href="#" target="_blank" class="social-icon-link">
+            <img src="img/facebook-icon.png" alt="Facebook">
+            </a>
+          <a href="#" target="_blank" class="social-icon-link">
+            <img src="img/instagram-icon.png" alt="Instagram">
+            </a>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/4491280906" target="_blank" class="whatsapp-btn">
+    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+    <span>Contactar por WhatsApp</span>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bro's Style. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerButton = document.querySelector('.hamburger-menu');
+      const mainNav = document.getElementById('mainNav');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+
+      hamburgerButton.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        hamburgerButton.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            hamburgerButton.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

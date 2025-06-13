@@ -8,39 +8,139 @@
 </head>
 <body>
 
-  <header>
-    <h1>Bro's Style</h1>
-    <nav>
+<header>
+  <div class="container header-container">
+    <h1 class="logo">Bro's Style</h1>
+    <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
       <ul class="nav-menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="como-pedir.html">Cómo pedir</a></li>
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="productos.html" class="nav-link">Productos</a></li>
+        <li><a href="como-pedir.html" class="nav-link">Cómo pedir</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <section>
-      <h2>¿Cómo hacer un pedido?</h2>
-      <p>Realizar un pedido en Bro's Style es muy sencillo. Sigue estos pasos:</p>
-      <ol>
-        <li>Explora nuestro catálogo de productos y elige el modelo que más te guste.</li>
-        <li>Toma nota del nombre o número del modelo.</li>
-        <li>Haz clic en el botón de WhatsApp que aparece abajo.</li>
-        <li>Escríbenos mencionando el modelo que deseas, tu talla y datos de contacto.</li>
-        <li>Confirmaremos contigo los detalles y la fecha estimada de entrega.</li>
-      </ol>
+  <main>
+    <section class="how-to-order-hero">
+      <div class="container">
+        <h2>Tu Par Perfecto a Un WhatsApp de Distancia</h2>
+        <p class="hero-intro-text">
+          En **Bro's Style**, queremos que obtener tus nuevos tenis sea tan fácil como elegir tu modelo favorito. Sigue estos sencillos pasos y en poco tiempo los tendrás contigo.
+        </p>
+      </div>
+    </section>
+
+    <section class="order-steps-section">
+      <div class="container">
+        <h3>Proceso de Pedido Rápido y Sencillo</h3>
+        <ol class="order-steps-list">
+          <li class="step-item">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h4>Elige tu Estilo</h4>
+              <p>Explora nuestro <a href="productos.html" class="inline-link">catálogo de productos</a> y encuentra ese par que resuena con tu personalidad. ¿Ya tienes uno en mente?</p>
+              <a href="productos.html" class="cta-link small-link">Ver Productos Ahora</a>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h4>Contáctanos por WhatsApp</h4>
+              <p>Haz clic en el botón de WhatsApp de abajo. Te enviaremos un mensaje pre-llenado para que solo tengas que agregar el **nombre del modelo** y tu **talla**.</p>
+              <a href="https://wa.me/4491280906?text=Hola!%20Me%20gustar%C3%ADa%20hacer%20un%20pedido.%20Estoy%20interesado%20en%20el%20modelo%3A%20%5BNOMBRE%20DEL%20MODELO%5D%20en%20talla%3A%20%5BTALLA%5D.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20detalles?" target="_blank" class="whatsapp-btn-inline">
+                <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+                Enviar Mensaje WhatsApp
+              </a>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h4>Confirmación y Pago</h4>
+              <p>Nuestro equipo te responderá para confirmar la disponibilidad, el precio total y las opciones de pago (transferencia, depósito, etc.). ¡Todo claro desde el inicio!</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <h4>¡Recibe tus Tenis!</h4>
+              <p>Una vez confirmado el pago, coordinaremos contigo la entrega. ¡Prepara tu outfit, tu nuevo par de Bro's Style está en camino!</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h3>Preguntas Frecuentes</h3>
+        <div class="faq-item">
+          <h4>¿Qué tallas manejan?</h4>
+          <p>Manejamos una amplia gama de tallas. Al contactarnos por WhatsApp, dinos qué talla buscas y te confirmaremos disponibilidad para el modelo de tu interés.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Cuál es el tiempo de entrega?</h4>
+          <p>Los tiempos de entrega pueden variar según el modelo y tu ubicación. Te daremos una estimación precisa al momento de confirmar tu pedido vía WhatsApp.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Cómo puedo ver más modelos?</h4>
+          <p>Constantemente actualizamos nuestra sección de <a href="productos.html" class="inline-link">productos</a>. Si buscas algo específico que no ves, ¡pregúntanos directamente!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta-section">
+      <div class="container">
+        <h2>¿Listo para lucir tu nuevo estilo?</h2>
+        <p>¡No esperes más! Haz clic abajo y comienza tu pedido ahora mismo.</p>
+        <a href="https://wa.me/4491280906?text=Hola!%20Estoy%20listo%20para%20hacer%20un%20pedido%20en%20Bro's%20Style.%20%C2%BFMe%20ayudan%3F" target="_blank" class="whatsapp-btn-large">
+          <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+          Iniciar Mi Pedido Ahora
+        </a>
+      </div>
     </section>
   </main>
-<!-- Botón flotante de WhatsApp con ícono y texto -->
-<a href="https://wa.me/5215512345678" target="_blank" class="whatsapp-btn">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
-    <path d="M12.004 2C6.479 2 2 6.477 2 12c0 1.929.547 3.74 1.49 5.272L2 22l4.866-1.463A9.93 9.93 0 0012.004 22c5.525 0 10.004-4.477 10.004-10S17.529 2 12.004 2zm0 18.222a8.25 8.25 0 01-4.196-1.148l-.3-.179-2.891.87.915-2.816-.194-.29A8.196 8.196 0 013.75 12c0-4.548 3.706-8.25 8.254-8.25s8.25 3.702 8.25 8.25-3.703 8.222-8.25 8.222zm4.507-6.246c-.245-.122-1.45-.716-1.674-.796-.223-.082-.386-.122-.548.122-.163.245-.629.796-.772.96-.143.163-.285.184-.53.061-.245-.122-1.032-.38-1.963-1.214-.726-.646-1.214-1.447-1.357-1.692-.143-.245-.015-.378.107-.5.11-.11.245-.285.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.122-.548-1.324-.752-1.814-.198-.48-.4-.412-.548-.42l-.468-.008c-.163 0-.428.061-.653.306s-.857.837-.857 2.04c0 1.204.876 2.366 1 2.53.122.163 1.727 2.634 4.193 3.692.587.255 1.045.408 1.402.521.59.188 1.127.163 1.55.099.472-.07 1.45-.593 1.656-1.165.204-.571.204-1.06.143-1.165-.061-.102-.224-.163-.469-.285z"/>
-  </svg>
-  <span>Contactar por WhatsApp</span>
-</a>
 
+  <a href="https://wa.me/4491280906" target="_blank" class="whatsapp-btn">
+    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12.04 2.02c-5.47 0-9.92 4.45-9.92 9.92 0 1.63.41 3.23 1.19 4.65L2.01 22.01l5.48-1.49c1.35.79 2.87 1.21 4.55 1.21 5.47 0 9.92-4.45 9.92-9.92.01-5.48-4.44-9.93-9.92-9.93zm5.18 13.91c-.1-.05-.62-.3-.72-.34-.14-.06-.23-.09-.33.09-.09.18-.34.45-.41.54-.08.09-.15.1-.28.05-.13-.05-.56-.21-1.06-.65-.39-.35-.65-.79-.73-.93-.08-.14-.01-.1-.08-.19-.07-.09-.02-.17-.07-.26-.05-.09-.34-.82-.47-1.12-.13-.29-.26-.24-.34-.25-.08-.01-.17-.01-.26-.01.09-.13.34-.34.41-.45.08-.1.14-.1.19-.1.05-.01.12-.01.19-.01.07.01.2.06.29.2.09.13.3.65.34.72.04.08.08.09.17.07.09-.03.56-.21.68-.29.13-.09.23-.17.26-.21.03-.05.07-.15.1-.21.03-.06.29-.7.36-.85.07-.14.15-.12.26-.12.11 0 .23 0 .34.01.07.01.17.07.23.16.06.09.21.56.26.65.05.09.09.1.19.06.09-.05.3-.1.4-.1.08-.01.21-.05.31-.15.1-.09.1-.09.16-.17.06-.09.14-.17.2-.17.06 0 .15.05.21.09.07.04.1.09.1.19-.01.09.11.28.05.34-.05.06-.41.22-.49.26zM12.04 3.01c5.96 0 10.8 4.84 10.8 10.8 0 1.93-.5 3.8-1.47 5.44L21 21.99l-5.78-1.57c-1.6.93-3.41 1.45-5.28 1.45-5.96 0-10.8-4.84-10.8-10.8-.01-5.96 4.83-10.8 10.8-10.8z"/></svg>
+    <span>Contactar por WhatsApp</span>
+  </a>
 
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Bro's Style. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerButton = document.querySelector('.hamburger-menu');
+      const mainNav = document.getElementById('mainNav');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+
+      hamburgerButton.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        hamburgerButton.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            hamburgerButton.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
