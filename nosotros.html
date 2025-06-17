@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,6 +32,7 @@
 </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="about-hero">
       <div class="container">
         <h2>Bro's Style: Donde Tu Estilo Encuentra Su Voz</h2>
@@ -39,51 +41,60 @@
         </p>
       </div>
     </section>
-
-    <section class="about-highlight vision-mission">
+    <section class="about-highlight vision-mission highlight-section">
       <div class="container">
-        <div class="highlight-item">
-          <h3>Nuestra Visión</h3>
-          <p>Ser tu destino número uno para calzado exclusivo, personalizado y sin complicaciones.</p>
-        </div>
-        <div class="highlight-item">
-          <h3>Nuestra Misión</h3>
-          <p>Ofrecer tenis de calidad superior y una atención excepcional, haciendo tu compra una experiencia memorable.</p>
+        <h3 class="section-title">Nuestra Filosofía</h3>
+        <div class="highlight-grid">
+          <div class="highlight-item">
+            <h3>Nuestra Visión</h3>
+            <p>Ser tu destino número uno para calzado exclusivo, personalizado y sin complicaciones. Un lugar donde cada paso que das refleje tu personalidad única y tu pasión por el estilo auténtico.</p>
+          </div>
+          <div class="highlight-item">
+            <h3>Nuestra Misión</h3>
+            <p>Ofrecer tenis de calidad superior y una atención excepcional, haciendo tu compra una experiencia memorable. Conectamos contigo a través de la pasión compartida por el streetwear y el estilo personal.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="about-story">
       <div class="container">
-        <h3>De Nuestra Esencia a Tus Pasos</h3>
-        <p>
-          En Bro's Style, nacimos de una idea simple: hacer que encontrar el par de tenis perfecto sea fácil, confiable y emocionante. Olvídate de lo ordinario; con nuestro modelo por pedido, tu estilo es la prioridad.
-        </p>
-        <p>
-          Cada par es una declaración. Cada cliente, parte de nuestra familia.
-        </p>
+        <h3 class="section-title">De Nuestra Esencia a Tus Pasos</h3>
+        <div class="story-content">
+          <p>
+            En Bro's Style, nacimos de una idea simple: hacer que encontrar el par de tenis perfecto sea fácil, confiable y emocionante. Olvídate de lo ordinario; con nuestro modelo por pedido, tu estilo es la prioridad.
+          </p>
+          <div class="story-highlight">
+            "Cada par es una declaración. Cada cliente, parte de nuestra familia."
+          </div>
+          <p>
+            Creemos que los tenis son más que calzado: son una forma de expresión, una declaración de personalidad, una extensión de quien eres. Por eso, cada recomendación que hacemos y cada producto que ofrecemos está pensado para conectar contigo de manera auténtica.
+          </p>
+        </div>
       </div>
     </section>
 
+    <!-- Values Section -->
     <section class="about-values">
       <div class="container">
-        <h3>¿Qué nos Impulsa?</h3>
+        <h3 class="section-title">¿Qué nos Impulsa?</h3>
+        <p class="section-subtitle">Los valores que guían cada paso que damos contigo</p>
         <div class="values-grid">
           <div class="value-card">
             <h4>Calidad Auténtica</h4>
-            <p>Solo lo mejor para tus pies.</p>
+            <p>Solo lo mejor para tus pies. Cada producto que recomendamos pasa por nuestro filtro de calidad y autenticidad para garantizar que obtengas exactamente lo que buscas.</p>
           </div>
           <div class="value-card">
             <h4>Conexión Genuina</h4>
-            <p>Tu satisfacción, nuestro compromiso.</p>
+            <p>Tu satisfacción es nuestro compromiso. Construimos relaciones duraderas basadas en confianza, respeto y pasión compartida por el buen estilo.</p>
           </div>
           <div class="value-card">
             <h4>Estilo Sin Límites</h4>
-            <p>Encuentra tu match perfecto.</p>
+            <p>Encuentra tu match perfecto. Desde clásicos atemporales hasta las últimas tendencias, tu estilo único merece opciones únicas.</p>
           </div>
           <div class="value-card">
             <h4>Proceso Simple</h4>
-            <p>Pedir tus tenis, ¡así de fácil!</p>
+            <p>Pedir tus tenis, ¡así de fácil! Eliminamos las complicaciones para que te enfoques en lo importante: lucir increíble con tu nuevo calzado.</p>
           </div>
         </div>
       </div>
@@ -93,7 +104,7 @@
       <div class="container">
         <h3>Tu Próximo Par Te Espera</h3>
         <p>
-          ¿Listo para renovar tu colección?
+          ¿Listo para renovar tu colección? Descubre cómo podemos ayudarte a encontrar exactamente lo que buscas.
         </p>
         <div class="cta-buttons">
           <a href="productos.html" class="cta-link">Ver Productos</a>
@@ -134,13 +145,35 @@
       // Lógica para el estado 'active' en el menú de navegación
       const currentPath = window.location.pathname.split('/').pop();
       navLinks.forEach(link => {
-        link.classList.remove('active'); // Elimina 'active' de todos los enlaces primero
+        link.classList.remove('active');
         const linkPath = link.getAttribute('href');
         if (currentPath === linkPath) {
           link.classList.add('active');
         } else if (currentPath === '' && linkPath === 'index.html') {
           link.classList.add('active');
         }
+      });
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observar elementos para animaciones
+      const animatedElements = document.querySelectorAll('.highlight-item, .value-card, .story-highlight');
+      animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
       });
     });
   </script>
