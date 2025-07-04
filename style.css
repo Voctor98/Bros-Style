@@ -101,10 +101,22 @@ header {
 .nav-menu .nav-link.active::after { /* Estado activo */
   width: 100%;
 }
-
+.main-nav {
+  display: none; /* Oculta la navegación normal */
+}
+.main-nav.active {
+  display: block;
+  width: 100%;
+}
+.nav-menu {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+}
 /* --- Menú de Hamburguesa --- */
 .hamburger-menu {
-  display: none; /* Oculto por defecto en desktop */
+  display: flex; /* Oculto por defecto en desktop */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
