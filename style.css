@@ -119,6 +119,24 @@ header {
 .hamburger-menu:focus {
   outline: none; /* Quita el contorno al hacer clic */
 }
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;     /* centra en móvil */
+    justify-content: center;
+    gap: 20px;
+  }
+}
 
 .hamburger-menu .bar {
   width: 100%;
