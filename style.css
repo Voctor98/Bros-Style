@@ -45,11 +45,35 @@ header {
 }
 
 .logo {
-  font-size: 2.2rem;
-  font-weight: 700; /* Más audaz */
-  color: #3385ff; /* Color principal de tu marca */
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 0;
-  text-decoration: none; /* Asegúrate que el logo si es un enlace no tenga subrayado */
+  font-size: 1.8rem;
+    }
+.logo-icon {
+  width: 32px;
+  height: auto;
+}
+@media (max-width: 600px) {
+.logo-icon {
+  width: 24px;
+}
+.logo {
+  font-size: 1.4rem;
+  }
+}
+
+.hero-logo {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+@media (max-width: 600px) {
+.hero-logo {
+  width: 60px;
+  }
 }
 
 .main-nav {
