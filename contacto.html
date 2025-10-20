@@ -36,7 +36,7 @@
 <main>
   <section class="contact-hero-section">
     <div class="container">
-       <img src="img/logo-icon.png" alt="Logo Bro's Style" class="hero-logo">
+      <img src="img/logo-icon.png" alt="Logo Bro's Style" class="hero-logo">
       <h2>Hablemos de Estilo y Tenis</h2>
       <p class="hero-intro-text">
         ¿Tienes una duda, quieres un modelo exclusivo o necesitas ayuda con tu pedido? ¡Estamos aquí para ti! En Bro's Style, la comunicación es clave.
@@ -82,12 +82,10 @@
         <h4>Correo Electrónico</h4>
         <p>Si prefieres una comunicación más formal o necesitas enviar documentos, escríbenos directamente.</p>
 
-        <!-- Botón único de Gmail -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=brosstyle736@gmail.com&su=Consulta%20sobre%20Bro's%20Style&body=Hola%20Bro's%20Style,%20quisiera%20más%20información%20sobre%20sus%20productos."
-           target="_blank" rel="noopener noreferrer"
-           class="cta-link small-link gmail-btn" title="Abrir en Gmail Web">
+        <!-- Botón inteligente de Gmail -->
+        <a id="emailButton" class="cta-link small-link gmail-btn">
           <img src="img/email-icon.png" alt="Icono de Gmail" width="20" height="20" style="vertical-align: middle; margin-right: 8px;">
-          Abrir en Gmail
+          Contactar por Email
         </a>
       </div>
     </div>
@@ -176,6 +174,18 @@
       const linkPath = link.getAttribute('href');
       if (currentPath === linkPath) link.classList.add('active');
     });
+
+    // Botón inteligente de Gmail (funciona en PC y móvil)
+    const emailButton = document.getElementById("emailButton");
+    const email = "brosstyle736@gmail.com";
+    const subject = "Consulta sobre Bro's Style";
+    const body = "Hola Bro's Style, quisiera más información sobre sus productos.";
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    emailButton.href = isMobile ? mailtoLink : gmailLink;
+    emailButton.target = "_blank";
+    emailButton.rel = "noopener noreferrer";
   });
 </script>
 </body>
