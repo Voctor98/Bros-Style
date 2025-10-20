@@ -27,7 +27,7 @@
         <li><a href="productos.html" class="nav-link">Productos</a></li>
         <li><a href="como-pedir.html" class="nav-link">Cómo pedir</a></li>
         <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -46,7 +46,10 @@
 
   <section class="contact-details-section container">
     <h3>Ponte en Contacto Directo</h3>
-    <div class="contact-cards-grid"> <div class="contact-item">
+    <div class="contact-cards-grid">
+
+      <!-- WhatsApp -->
+      <div class="contact-item">
         <span class="icon-circle">
           <img src="img/whatsapp-icon.png" alt="WhatsApp Icon" class="contact-icon">
         </span>
@@ -58,6 +61,7 @@
         </a>
       </div>
 
+      <!-- Horarios -->
       <div class="contact-item">
         <span class="icon-circle">
           <img src="img/time-icon.png" alt="Time Icon" class="contact-icon">
@@ -65,25 +69,31 @@
         <h4>Horario de Atención</h4>
         <p>Estamos disponibles para atenderte y resolver tus consultas durante nuestro horario:</p>
         <p class="schedule-text">
-          **Lunes a Viernes:** 10:00 AM - 6:00 PM <br>
-          **Sábados, Domingos y Feriados:** Cerrado
+          <strong>Lunes a Viernes:</strong> 10:00 AM - 6:00 PM <br>
+          <strong>Sábados, Domingos y Feriados:</strong> Cerrado
         </p>
       </div>
 
+      <!-- Correo -->
       <div class="contact-item">
         <span class="icon-circle">
           <img src="img/email-icon.png" alt="Email Icon" class="contact-icon">
         </span>
         <h4>Correo Electrónico</h4>
-        <p>Si prefieres una comunicación más formal o adjuntar documentos, puedes escribirnos.</p>
-        <a href="mailto: brosstyle736@gmail.com" class="cta-link small-link">
-          <img src="img/email-icon.png" alt="Icono de Email" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
-          Enviar Email
+        <p>Si prefieres una comunicación más formal o necesitas enviar documentos, escríbenos directamente.</p>
+
+        <!-- Botón único de Gmail -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=brosstyle736@gmail.com&su=Consulta%20sobre%20Bro's%20Style&body=Hola%20Bro's%20Style,%20quisiera%20más%20información%20sobre%20sus%20productos."
+           target="_blank" rel="noopener noreferrer"
+           class="cta-link small-link gmail-btn" title="Abrir en Gmail Web">
+          <img src="img/email-icon.png" alt="Icono de Gmail" width="20" height="20" style="vertical-align: middle; margin-right: 8px;">
+          Abrir en Gmail
         </a>
       </div>
     </div>
   </section>
 
+  <!-- FAQ -->
   <section id="faq-section" class="faq-section container">
     <h3>Preguntas Frecuentes</h3>
     <div class="faq-list">
@@ -102,6 +112,7 @@
     </div>
   </section>
 
+  <!-- Ubicación -->
   <section class="map-section container">
     <h3>Encuéntranos en Aguascalientes</h3>
     <p>Aunque operamos principalmente en línea, podemos acordar entregas personales en puntos específicos de Aguascalientes. ¡Ponte en contacto para coordinar!</p>
@@ -111,21 +122,22 @@
     </div>
   </section>
 
-
+  <!-- Redes Sociales -->
   <section class="social-media-section container">
     <h3>Síguenos en Redes Sociales</h3>
     <p>Mantente al tanto de nuestros nuevos modelos, promociones y noticias de Bro's Style.</p>
     <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=61553899737084" target="_blank" class="social-icon-link">
         <img src="img/facebook-icon.png" alt="Facebook">
-        </a>
-      <a href="https://www.instagram.com/brosstyle7?igsh=cDNqZmg4azRudWo5 target="_blank" class="social-icon-link">
+      </a>
+      <a href="https://www.instagram.com/brosstyle7?igsh=cDNqZmg4azRudWo5" target="_blank" class="social-icon-link">
         <img src="img/instagram-icon.png" alt="Instagram">
-        </a>
-      </div>
+      </a>
+    </div>
   </section>
 </main>
 
+<!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/4491280906" target="_blank" class="whatsapp-btn">
   <img src="img/whatsapp-icon.png" alt="Icono de WhatsApp" width="24" height="24">
   <span>Contactar por WhatsApp</span>
@@ -157,26 +169,12 @@
       });
     });
 
-    // Lógica para el estado 'active' en el menú de navegación
+    // Marca el enlace activo según la página actual
     const currentPath = window.location.pathname.split('/').pop();
     navLinks.forEach(link => {
-      link.classList.remove('active'); // Elimina 'active' de todos los enlaces primero
+      link.classList.remove('active');
       const linkPath = link.getAttribute('href');
-      if (currentPath === linkPath) {
-        link.classList.add('active');
-      } else if (currentPath === '' && linkPath === 'index.html') {
-        link.classList.add('active');
-      }
-    });
-
-    // Pequeño script para el scroll suave a la sección FAQ
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+      if (currentPath === linkPath) link.classList.add('active');
     });
   });
 </script>
